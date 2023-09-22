@@ -1,0 +1,200 @@
+// Topic 4. HM
+
+// [Task 1]
+// Дан массив. Все его элементы:
+// а) увеличить в 2 раза;
+// б) уменьшить на число А;
+// в) разделить на первый элемент.
+// void main() {
+//   List<int> arr = [1, 2, 3, 4, 5];
+//   int a = 8;
+//   List<int> uveleichit = arr.map((element) => element * 2).toList();
+//   List<int> umenshenie = arr.map((element) => element - a).toList();
+//   List<double> razdelit = arr.map((element) => element / arr[0]).toList();
+
+//   print("$uveleichit");
+//   print("$umenshenie");
+//   print("$razdelit");
+// }
+
+// [Task 2]
+// Дан массив. Все его элементы:
+// а) уменьшить на 20;
+// б) умножить на последний элемент;
+// в) увеличить на число В.
+
+// void main (){
+//   int a = 2;
+//   var list = [23, 24, 25, 26];
+//   list.forEach((number)=>print(number-20));
+// }
+//  void main (){
+//    int a = 2;
+//    var list = [23, 24, 25, 26];
+//    list.forEach((number)=>print(number*(list[3])));
+//  }
+//  void main (){
+//    int b = 5;
+//    var list = [23, 24, 25, 26];
+//    list.forEach((number)=>print(number+b));
+//  }
+
+
+// [Task 3]
+// Определить:
+// а) сумму всех элементов массива;
+// б) произведение всех элементов массива;
+// в) сумму квадратов всех элементов массива;
+// г) сумму шести первых элементов массива;
+// void main() {
+//   List<int> arr = [8, 9, 10, 11, 12, 13, 14, 15]; 
+//   int summa = arr.reduce((value, element) => value + element);
+//   int proizvedenie = arr.reduce((value, element) => value * element);
+//   int summakvadrat = arr.map((element) => element * element).reduce((value, element) => value + element);
+//   int summashest = arr.take(6).reduce((value, element) => value + element);
+
+//   print("Сумма:$summa");
+//   print("Произведение: $proizvedenie");
+//   print("Сумма квадратов: $summakvadrat");
+//   print("Сумма 6 элементов: $summashest");
+// }
+
+// [Task 4]
+// Дан массив натуральных чисел. Напечатать:
+// а) все элементы массива, являющиеся двузначными числами;
+// б) все элементы массива, являющиеся трехзначными числами.
+
+// void main() {
+//  var list = [34, 23, 69, 432];
+//   for (int i in list) {
+//     if (i >= 10 && i <= 99) {
+//       print(i);
+//     }
+//   }
+// }
+
+
+
+// [Task 6]
+// Удалить из массива все повторяющиеся элементы, оставив их первые вхо-
+// ждения, т. е. в массиве должны остаться только различные элементы
+
+// void main() {
+//   List<int> arr = [3, 5, 4, 2, 7, 3, 6]; 
+
+//   List<int> a = [];
+
+//   for (int element in arr) {
+//     if (!a.contains(element)) {
+//       a.add(element);
+//     }
+//   }
+
+//   print("Массив без повторяющихся элементов: $a");
+// }
+
+
+
+// [Task 7]
+// Вставить заданное число в массив целых чисел:
+// а) после первого отрицательного элемента;
+// б) перед последним четным элементом. 
+// void main() {
+//   var list = [5, 5, -4, 4, 7, 9, -3];
+//   int n = 40; 
+//   int otricateliny = -1;
+//   for (int i = 0; i < list.length; i++) {
+//     if (list[i] < 0) {
+//       otricateliny = i;
+//       break; 
+//     }
+//   }
+//   if (otricateliny != -1) {
+//     list.insert(otricateliny + 1, n);
+//   } else {
+//     print("otricatelny jok");
+//   }
+//   print(list);
+// }
+// void main() {
+//   var list = [5, 5, -4, 4, 7, 9, -3];
+//   int n = 9; 
+//   int chetnyi = -1;
+//   for (int i = list.length - 1; i >= 0; i--) {
+//     if (list[i] % 2 == 0) {
+//       chetnyi = i;
+//       break;
+//   }
+//   }
+//   if (chetnyi != -1) {
+//     list.insert(chetnyi, n);
+//   } else {
+//     print("Нет четных элементов");
+//   }
+//   print(list);
+// }
+
+// [Task 8]
+// Для арифметических операций с большими числами, которые не могут быть
+// представлены в памяти компьютера, используется следующий прием. Каждая
+// цифра таких чисел записывается в отдельный элемент массива, и необходимые
+// операции проводятся с элементами массива цифр. Составить программу:
+// а) выполняющую сложение 20-значных чисел;
+// б) выполняющую вычитание 30-значных чисел; 
+// import 'package:big_integer/big_integer.dart';
+
+// void main() {
+//   BigInteger dvadcat1 = BigInteger.parse("12121212121212121212");
+//   BigInteger dvadcat2 = BigInteger.parse("34343434343434343434");
+
+//   BigInteger sum = dvadcat1 + dvadcat2;
+//   print("$sum");
+// }
+// import 'package:big_integer/big_integer.dart';
+
+// void main() {
+//    BigInteger tridcat1 = BigInteger.parse("12121212121212121212");
+//   BigInteger tridcat2 = BigInteger.parse("343434343434343434343");
+
+//   BigInteger difference = tridcat1 - tridcat2;
+
+//   print("$difference");
+// }
+// [Task 9]
+// Определите пустой список, который назовите week и который будет представлять дни недели. С помощью метода add() добавьте в него все дни недели. Затем пройдитесь по списку с помощью цикла for или метода forEach и выведите его элементы на консоль. Затем удалите из списка нерабочие дни и также выведите его на консоль
+
+// void main() {
+//   List<String> week = [];
+
+//   week.add("Понедельник");
+//   week.add("Вторник");
+//   week.add("Среда");
+//   week.add("Четверг");
+//   week.add("Пятница");
+//   week.add("Суббота");
+//   week.add("Воскресенье");
+//   print("weeks:");
+//   week.forEach((day) => print(day));
+//   week.remove("Суббота");
+//   week.remove("Воскресенье");
+
+//   print("\nРабочие дни:");
+//   week.forEach((day) => print(day));
+// }
+
+
+
+// [Task 10]
+// Определите неизменяемый список, как который называется week и который содержит все дни недели. Выведите его на консоль
+// void main() {
+//   const List<String> week = [
+//     'Понедельник',
+//     'Вторник',
+//     'Среда',
+//     'Четверг',
+//     'Пятница',
+//     'Суббота',
+//     'Воскресенье',
+//   ];
+//   print(week);
+// }
